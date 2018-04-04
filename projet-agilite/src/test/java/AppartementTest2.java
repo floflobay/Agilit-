@@ -6,7 +6,7 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features="")
+//@CucumberOptions(features="")
 public class AppartementTest2 {
 	 Piece chambre = new Piece();
 	 Piece salon;
