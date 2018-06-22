@@ -7,11 +7,12 @@ import java.util.List;
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class AppartementPersonnel
+public class AppartementPersonnel implements IVisitable
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private String adresse ; 
     private ArrayList<Piece> mesPieces =  new ArrayList<Piece>();
+    double prixM2 = 1.0;
     /**
      * Constructeur d'objets de classe Proprietaire
      */
@@ -22,6 +23,11 @@ public class AppartementPersonnel
     public AppartementPersonnel(String adresse)
     {
          this.adresse = adresse;
+    }
+    public AppartementPersonnel(String adresse,double prixM)
+    {
+         this.adresse = adresse;
+         this.prixM2 = prixM;
     }
     public String getAdresse(){
         return adresse;
@@ -52,4 +58,13 @@ public class AppartementPersonnel
     	}
        return somme;
     }
+	public double accept(IVisiteur visitor) {
+		// TODO doubleAuto-generated method stub
+		return visitor.visit(this,prixM2);
+	}
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return " Votre appartement de " +  mesPieces.size() + " pieces au " + adresse + " vaut : " + this.prixAppart(prixM2);
+	}
 }
