@@ -57,4 +57,9 @@ public class Piece
         }
         return false; 
     }
+     public String toString() {
+		// TODO Auto-generated method stub
+    	 return "La piece : "+ nomPiece +"fait :"+ surface +" m2 et coûte à elle seule " + this.prixPiece(appMeContient.prixM2);
+		
+	}
 }

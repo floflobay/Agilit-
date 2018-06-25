@@ -65,6 +65,10 @@ public class AppartementPersonnel implements IVisitable
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return " Votre appartement de " +  mesPieces.size() + " pieces au " + adresse + " vaut : " + this.prixAppart(prixM2);
+		String app = " Votre appartement de " +  mesPieces.size() + " pieces au " + adresse + " vaut : " + this.prixAppart(prixM2);
+		for(int i = 0 ; i < mesPieces.size();i++){
+			app += "\n"+(mesPieces.get(i)).toString();
+		}
+		return app;
 	}
 }

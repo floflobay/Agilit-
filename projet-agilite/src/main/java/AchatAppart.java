@@ -19,8 +19,8 @@ class AchatAppart implements IVisiteur
 			// TODO Auto-generated method stub
 			return 0;
 		}
-		public static void achatAppart(AppartementPersonnel ap,Personne p, int duree){
-			System.out.println("Vous voulez acheter l'apprtement suivant sur " + duree +" mensualités");
+		public static void achatAppart(AppartementPersonnel ap,Personne p, int dureeH, int dureePEL){
+			System.out.println("Vous voulez acheter l'apprtement suivant sur " + dureeH +" mensualités pour un prêt Habitat\n et "+ dureePEL + " mensualités pour un prêt épargne logement\n");
 			System.out.println(ap);
 			System.out.println("Vous etes : " + p);
 			
@@ -36,8 +36,8 @@ class AchatAppart implements IVisiteur
 			 */
 			double mpret = montantAppart - SoldeCompte;
 			System.out.println(" Votre pret sera de "+  mpret + " euros" );
-			CreditImmobilierFactory PretEpargneLogement = new PretEpargneLogementFactory(mpret,duree);
-		    CreditImmobilierFactory PretHabitat = new PretHabitatFactory(mpret,duree);
+			CreditImmobilierFactory PretEpargneLogement = new PretEpargneLogementFactory(mpret,dureePEL);
+		    CreditImmobilierFactory PretHabitat = new PretHabitatFactory(mpret,dureeH);
 
 		    Mensualite mensualite;
 		    Mensualite mensualite2;
@@ -54,6 +54,7 @@ class AchatAppart implements IVisiteur
 		    System.out.println(" votre taux d'interet est de "  +mensualite.getTauxDinteret());
 		    tarifMensualite = mensualite.getMensualite();
 		    System.out.println("Le tarif de votre mensualite sera de :" + tarifMensualite);
+			System.out.println(" Votre pret sera de "+  mpret + " euros" );
 
 		    System.out.println("Simulation pour un credit Epargne Logement");
 
@@ -78,17 +79,23 @@ class AchatAppart implements IVisiteur
 		 * /
 		 */
 		public static void main(String[] args) {
-			Personne p = new Personne("jean","seguin",30);
+			Personne p = new Personne("Martin","Martinez",35);
 			CompteBancaire c = new CompteBancaire();
 			p.setCompte(c);
 			c.invokPersonne(p);
 			System.out.println(p);
-			c.deposer(1000.0);
+			c.deposer(800000.0);
 			System.out.println(p);
-			AppartementPersonnel ap = new AppartementPersonnel("55 av mozart 75016" , 100.0);
-			Piece studio = new Piece("studio", 15.0, ap);
-			ap.addPiece(studio);
+			AppartementPersonnel ap = new AppartementPersonnel("1 rue du bonheur 75016" , 10000.0);
+			Piece p1 = new Piece("chambreJaune", 25.0, ap);
+			Piece p2 = new Piece("chmabreRose", 25.0, ap);
+			Piece p3 = new Piece("chambreBleue", 25.0, ap);
+			Piece p4 = new Piece("chambreRouge", 25.0, ap);
+			ap.addPiece(p1);
+			ap.addPiece(p2);
+			ap.addPiece(p3);
+			ap.addPiece(p4);
 			System.out.println(ap);
-			achatAppart(ap,p,10);
+			achatAppart(ap,p,300,500);
 		}
 }

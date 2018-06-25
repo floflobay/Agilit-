@@ -50,7 +50,7 @@ public class Personne implements IVisitable{
 	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
-		return nom + " " + prenom + " " + age +" solde du compte : " +  compte.getSolde();
+		return "Client : "+ nom + " " + prenom + " \nAge : " + age +" ans\nSolde du compte : " +  compte.getSolde() +" euros";
 	}
 	
 }

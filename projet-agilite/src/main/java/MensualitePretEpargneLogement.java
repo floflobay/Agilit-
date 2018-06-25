@@ -2,7 +2,7 @@ public class MensualitePretEpargneLogement extends Mensualite{
 
     private final double montantEmprunt;
     private final double dureeEmprunt;
-    final double tauxInteret = 0.15;
+    final double tauxInteret = 0.025;
 
     public MensualitePretEpargneLogement(double montant, int duree){
         this.dureeEmprunt = duree;
