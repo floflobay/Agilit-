@@ -1,7 +1,7 @@
 public class MensualitePretHabitat extends Mensualite {
     private final double montantEmprunt;
     private final double dureeEmprunt;
-    final double tauxInteret = 0.015;
+    final double tauxInteret = 0.15;
 
     public MensualitePretHabitat(double montant, int duree){
         this.dureeEmprunt = duree;
@@ -17,9 +17,8 @@ public class MensualitePretHabitat extends Mensualite {
     }
     @Override
     public double getMensualite(){
-        return ((this.montantEmprunt *(1+(this.tauxInteret*this.dureeEmprunt)))/this.dureeEmprunt);
-
-    }
+        return ((this.montantEmprunt *(1+(this.tauxInteret*this.dureeEmprunt)))/this.dureeEmprunt); 
+        }
 
 
 }

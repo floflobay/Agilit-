@@ -1,4 +1,4 @@
-Feature: Verifier la mensualité du pret
+Feature: Verifier la mensualitï¿½ du pret
 	
 	@tag1	
 	Scenario Outline: Consulter la mensualite d'un pretimmobilier de type pret habitat
@@ -7,7 +7,7 @@ Feature: Verifier la mensualité du pret
 		Then la mensualite est <mensualitePH> 
 		Examples:
 		|montantPretHabitat|dureePH |mensualitePH|
-		|500.0             |10      |175.0       |
+		|500.0             |10      |125.0       |
 		
 	@tag2	
 	Scenario Outline: Consulter la mensualite d'un pret immobilier de type epargne logement
@@ -16,4 +16,4 @@ Feature: Verifier la mensualité du pret
 		Then la mensualite du pret est <mensualiteEL> 
 		Examples:
 		|montantEL|dureeEL |mensualiteEL     |
-		|600.0    |12      |140.0|
+		|600.0    |12      |200.0|
